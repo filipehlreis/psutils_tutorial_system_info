@@ -136,7 +136,91 @@ class MainWindow(QMainWindow):
 
         self.show()
 
+        self.battery()
+
+    # A function to convert seconds to hours
+
+    def secs2hours(self, secs):
+        mm, ss = divmod(secs, 60)
+        hh, mm = divmod(mm, 60)
+        return "%d:%02d:%02d (H:M:S)" % (hh, mm, ss)
+
+    # Get system battery information
+
+    def battery(self):
+        batt = psutil.sensors_battery()
+        self.ui.battery_usage.show()
+
+        if not hasattr(psutil, "sensors_battery"):
+            self.ui.battery_status.setText("Platform not supported")
+
+        if batt is None:
+            self.ui.battery_status.setText("No battery installed")
+
+        if hasattr(batt, "power_plugged"):
+            if batt.power_plugged:
+                self.ui.battery_charge.setText(str(round(batt.percent, 2))+"%")
+                self.ui.battery_time_left.setText("N/A")
+
+                if batt.percent < 100:
+                    self.ui.battery_status.setText("Charging")
+                else:
+                    self.ui.battery_status.setText("Fully Charged")
+
+                self.ui.battery_plugged.setText("Yes")
+
+            else:
+                self.ui.battery_charge.setText(str(round(batt.percent, 2))+"%")
+                self.ui.battery_time_left.setText(
+                    self.secs2hours(batt.secsleft))
+
+                if batt.percent < 100:
+                    self.ui.battery_status.setText("Discharging")
+                else:
+                    self.ui.battery_status.setText("Fully Charged")
+
+                self.ui.battery_plugged.setText("No")
+
+        if hasattr(batt, "percent"):
+            # Battery Power Indicator using round progress bar
+            # SET progress bar value
+            self.ui.battery_usage.rpb_setMaximum(100)
+            # SET Progress values
+            self.ui.battery_usage.rpb_setValue(batt.percent)
+            # SET progress bar style
+            self.ui.battery_usage.rpb_setBarStyle("Hybrid2")
+            # SET progress bar line color
+            self.ui.battery_usage.rpb_setLineColor((255, 30, 90))
+            # SET progress bar line color
+            # self.ui.battery_usage.rpb_setCircleColor((45, 74, 83))
+            # SET progress bar line color
+            self.ui.battery_usage.rpb_setPieColor((45, 74, 83))
+            # CHANGING the path color
+            # self.ui.battery_usage.rpb_setPathColor((45, 74, 83))
+            # SET progress bar TEXT COLOR
+            self.ui.battery_usage.rpb_setTextColor((255, 255, 255))
+            # SET Progress bar starting position
+            # North, East, West, South
+            self.ui.battery_usage.rpb_setInitialPos("West")
+            # SET progress bar text type: VALUE or PERCENTAGE
+            # Value, Percentage
+            self.ui.battery_usage.rpb_setTextFormat("Percentage")
+            # SET progress bar font
+            # set progress bar line width
+            self.ui.battery_usage.rpb_setLineWidth(15)
+            # Path width
+            self.ui.battery_usage.rpb_setPathWidth(15)
+            # set progress bar line cap
+            # RoundCap, SquareCap
+            self.ui.battery_usage.rpb_setLineCap("RoundCap")
+            # Line Style
+            # DotLine, DashLine
+            # self.ui.battery_usage.rpb_setLineStyle("DotLine")
+        else:
+            self.ui.battery_usage.hide()
+
     # Side Menu buttons styling function
+
     def applyButtonStyle(self):
         # Reset style for other buttons
         for w in self.ui.menu_frame.findChildren(QPushButton):

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'tutorial_system_infoLXhFgd.ui'
+## Form generated from reading UI file 'tutorial_system_infosEsksw.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -472,27 +472,6 @@ class Ui_MainWindow(object):
         self.frame_3.setFrameShadow(QFrame.Raised)
         self.gridLayout_5 = QGridLayout(self.frame_3)
         self.gridLayout_5.setObjectName(u"gridLayout_5")
-        self.label_33 = QLabel(self.frame_3)
-        self.label_33.setObjectName(u"label_33")
-        self.label_33.setFont(font3)
-        self.label_33.setStyleSheet(u"color: rgb(255, 255, 255);")
-
-        self.gridLayout_5.addWidget(self.label_33, 1, 0, 2, 1)
-
-        self.label_38 = QLabel(self.frame_3)
-        self.label_38.setObjectName(u"label_38")
-        self.label_38.setFont(font3)
-        self.label_38.setStyleSheet(u"color: rgb(255, 255, 255);")
-
-        self.gridLayout_5.addWidget(self.label_38, 2, 1, 2, 1)
-
-        self.label_37 = QLabel(self.frame_3)
-        self.label_37.setObjectName(u"label_37")
-        self.label_37.setFont(font3)
-        self.label_37.setStyleSheet(u"color: rgb(255, 255, 255);")
-
-        self.gridLayout_5.addWidget(self.label_37, 1, 1, 1, 1)
-
         self.label_35 = QLabel(self.frame_3)
         self.label_35.setObjectName(u"label_35")
         self.label_35.setFont(font3)
@@ -507,6 +486,34 @@ class Ui_MainWindow(object):
 
         self.gridLayout_5.addWidget(self.label_32, 0, 0, 1, 1)
 
+        self.battery_usage = roundProgressBar(self.frame_3)
+        self.battery_usage.setObjectName(u"battery_usage")
+        self.battery_usage.setMinimumSize(QSize(150, 150))
+        self.battery_usage.setMaximumSize(QSize(150, 150))
+
+        self.gridLayout_5.addWidget(self.battery_usage, 0, 2, 5, 1)
+
+        self.label_33 = QLabel(self.frame_3)
+        self.label_33.setObjectName(u"label_33")
+        self.label_33.setFont(font3)
+        self.label_33.setStyleSheet(u"color: rgb(255, 255, 255);")
+
+        self.gridLayout_5.addWidget(self.label_33, 1, 0, 2, 1)
+
+        self.battery_time_left = QLabel(self.frame_3)
+        self.battery_time_left.setObjectName(u"battery_time_left")
+        self.battery_time_left.setFont(font3)
+        self.battery_time_left.setStyleSheet(u"color: rgb(255, 255, 255);")
+
+        self.gridLayout_5.addWidget(self.battery_time_left, 2, 1, 2, 1)
+
+        self.battery_charge = QLabel(self.frame_3)
+        self.battery_charge.setObjectName(u"battery_charge")
+        self.battery_charge.setFont(font3)
+        self.battery_charge.setStyleSheet(u"color: rgb(255, 255, 255);")
+
+        self.gridLayout_5.addWidget(self.battery_charge, 1, 1, 1, 1)
+
         self.label_34 = QLabel(self.frame_3)
         self.label_34.setObjectName(u"label_34")
         self.label_34.setFont(font3)
@@ -514,26 +521,19 @@ class Ui_MainWindow(object):
 
         self.gridLayout_5.addWidget(self.label_34, 3, 0, 1, 1)
 
-        self.label_39 = QLabel(self.frame_3)
-        self.label_39.setObjectName(u"label_39")
-        self.label_39.setFont(font3)
-        self.label_39.setStyleSheet(u"color: rgb(255, 255, 255);")
+        self.battery_plugged = QLabel(self.frame_3)
+        self.battery_plugged.setObjectName(u"battery_plugged")
+        self.battery_plugged.setFont(font3)
+        self.battery_plugged.setStyleSheet(u"color: rgb(255, 255, 255);")
 
-        self.gridLayout_5.addWidget(self.label_39, 4, 1, 1, 1)
+        self.gridLayout_5.addWidget(self.battery_plugged, 4, 1, 1, 1)
 
-        self.label_36 = QLabel(self.frame_3)
-        self.label_36.setObjectName(u"label_36")
-        self.label_36.setFont(font3)
-        self.label_36.setStyleSheet(u"color: rgb(255, 255, 255);")
+        self.battery_status = QLabel(self.frame_3)
+        self.battery_status.setObjectName(u"battery_status")
+        self.battery_status.setFont(font3)
+        self.battery_status.setStyleSheet(u"color: rgb(255, 255, 255);")
 
-        self.gridLayout_5.addWidget(self.label_36, 0, 1, 1, 1)
-
-        self.battery_usage = roundProgressBar(self.frame_3)
-        self.battery_usage.setObjectName(u"battery_usage")
-        self.battery_usage.setMinimumSize(QSize(150, 150))
-        self.battery_usage.setMaximumSize(QSize(150, 150))
-
-        self.gridLayout_5.addWidget(self.battery_usage, 0, 2, 5, 1)
+        self.gridLayout_5.addWidget(self.battery_status, 0, 1, 1, 1)
 
 
         self.verticalLayout_5.addWidget(self.frame_3, 0, Qt.AlignTop)
@@ -878,7 +878,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 437, 471))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 192, 460))
         self.verticalLayout_12 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_12.setSpacing(0)
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
@@ -1267,14 +1267,14 @@ class Ui_MainWindow(object):
         self.label_30.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
         self.label_24.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
         self.label_31.setText(QCoreApplication.translate("MainWindow", u"Battery Information", None))
-        self.label_33.setText(QCoreApplication.translate("MainWindow", u"Charge", None))
-        self.label_38.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
-        self.label_37.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
         self.label_35.setText(QCoreApplication.translate("MainWindow", u"Plugged In", None))
-        self.label_32.setText(QCoreApplication.translate("MainWindow", u"Battery Information", None))
+        self.label_32.setText(QCoreApplication.translate("MainWindow", u"Status", None))
+        self.label_33.setText(QCoreApplication.translate("MainWindow", u"Charge", None))
+        self.battery_time_left.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
+        self.battery_charge.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
         self.label_34.setText(QCoreApplication.translate("MainWindow", u"Time Left", None))
-        self.label_39.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
-        self.label_36.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
+        self.battery_plugged.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
+        self.battery_status.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
         self.label_46.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
         self.label_48.setText(QCoreApplication.translate("MainWindow", u"Processor", None))
         self.label_41.setText(QCoreApplication.translate("MainWindow", u"N/A", None))

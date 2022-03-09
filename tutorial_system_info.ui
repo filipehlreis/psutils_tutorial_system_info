@@ -937,54 +937,6 @@ background: #171C29;
                  <enum>QFrame::Raised</enum>
                 </property>
                 <layout class="QGridLayout" name="gridLayout_5">
-                 <item row="1" column="0" rowspan="2">
-                  <widget class="QLabel" name="label_33">
-                   <property name="font">
-                    <font>
-                     <family>Noto Sans</family>
-                     <pointsize>10</pointsize>
-                    </font>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">color: rgb(255, 255, 255);</string>
-                   </property>
-                   <property name="text">
-                    <string>Charge</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="1" rowspan="2">
-                  <widget class="QLabel" name="label_38">
-                   <property name="font">
-                    <font>
-                     <family>Noto Sans</family>
-                     <pointsize>10</pointsize>
-                    </font>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">color: rgb(255, 255, 255);</string>
-                   </property>
-                   <property name="text">
-                    <string>N/A</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="1" column="1">
-                  <widget class="QLabel" name="label_37">
-                   <property name="font">
-                    <font>
-                     <family>Noto Sans</family>
-                     <pointsize>10</pointsize>
-                    </font>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">color: rgb(255, 255, 255);</string>
-                   </property>
-                   <property name="text">
-                    <string>N/A</string>
-                   </property>
-                  </widget>
-                 </item>
                  <item row="4" column="0">
                   <widget class="QLabel" name="label_35">
                    <property name="font">
@@ -1013,7 +965,71 @@ background: #171C29;
                     <string notr="true">color: rgb(255, 255, 255);</string>
                    </property>
                    <property name="text">
-                    <string>Battery Information</string>
+                    <string>Status</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="2" rowspan="5">
+                  <widget class="roundProgressBar" name="battery_usage" native="true">
+                   <property name="minimumSize">
+                    <size>
+                     <width>150</width>
+                     <height>150</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>150</height>
+                    </size>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0" rowspan="2">
+                  <widget class="QLabel" name="label_33">
+                   <property name="font">
+                    <font>
+                     <family>Noto Sans</family>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">color: rgb(255, 255, 255);</string>
+                   </property>
+                   <property name="text">
+                    <string>Charge</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="1" rowspan="2">
+                  <widget class="QLabel" name="battery_time_left">
+                   <property name="font">
+                    <font>
+                     <family>Noto Sans</family>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">color: rgb(255, 255, 255);</string>
+                   </property>
+                   <property name="text">
+                    <string>N/A</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QLabel" name="battery_charge">
+                   <property name="font">
+                    <font>
+                     <family>Noto Sans</family>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">color: rgb(255, 255, 255);</string>
+                   </property>
+                   <property name="text">
+                    <string>N/A</string>
                    </property>
                   </widget>
                  </item>
@@ -1034,7 +1050,7 @@ background: #171C29;
                   </widget>
                  </item>
                  <item row="4" column="1">
-                  <widget class="QLabel" name="label_39">
+                  <widget class="QLabel" name="battery_plugged">
                    <property name="font">
                     <font>
                      <family>Noto Sans</family>
@@ -1050,7 +1066,7 @@ background: #171C29;
                   </widget>
                  </item>
                  <item row="0" column="1">
-                  <widget class="QLabel" name="label_36">
+                  <widget class="QLabel" name="battery_status">
                    <property name="font">
                     <font>
                      <family>Noto Sans</family>
@@ -1062,22 +1078,6 @@ background: #171C29;
                    </property>
                    <property name="text">
                     <string>N/A</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="2" rowspan="5">
-                  <widget class="roundProgressBar" name="battery_usage" native="true">
-                   <property name="minimumSize">
-                    <size>
-                     <width>150</width>
-                     <height>150</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>150</width>
-                     <height>150</height>
-                    </size>
                    </property>
                   </widget>
                  </item>
@@ -1799,8 +1799,8 @@ background: #171C29;
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>437</width>
-                   <height>471</height>
+                   <width>192</width>
+                   <height>460</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_12">
