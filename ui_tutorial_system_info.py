@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'tutorial_system_infoIEvgXr.ui'
+## Form generated from reading UI file 'tutorial_system_infoEaccXP.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -549,12 +549,12 @@ class Ui_MainWindow(object):
         self.frame_4.setFrameShadow(QFrame.Raised)
         self.gridLayout_6 = QGridLayout(self.frame_4)
         self.gridLayout_6.setObjectName(u"gridLayout_6")
-        self.label_46 = QLabel(self.frame_4)
-        self.label_46.setObjectName(u"label_46")
-        self.label_46.setFont(font3)
-        self.label_46.setStyleSheet(u"color: rgb(255, 255, 255);")
+        self.system_version = QLabel(self.frame_4)
+        self.system_version.setObjectName(u"system_version")
+        self.system_version.setFont(font3)
+        self.system_version.setStyleSheet(u"color: rgb(255, 255, 255);")
 
-        self.gridLayout_6.addWidget(self.label_46, 4, 1, 1, 1)
+        self.gridLayout_6.addWidget(self.system_version, 4, 1, 1, 1)
 
         self.label_48 = QLabel(self.frame_4)
         self.label_48.setObjectName(u"label_48")
@@ -563,12 +563,12 @@ class Ui_MainWindow(object):
 
         self.gridLayout_6.addWidget(self.label_48, 2, 2, 1, 1)
 
-        self.label_41 = QLabel(self.frame_4)
-        self.label_41.setObjectName(u"label_41")
-        self.label_41.setFont(font)
-        self.label_41.setStyleSheet(u"color: rgb(255, 255, 255);")
+        self.system_system = QLabel(self.frame_4)
+        self.system_system.setObjectName(u"system_system")
+        self.system_system.setFont(font)
+        self.system_system.setStyleSheet(u"color: rgb(255, 255, 255);")
 
-        self.gridLayout_6.addWidget(self.label_41, 1, 0, 1, 2)
+        self.gridLayout_6.addWidget(self.system_system, 1, 0, 1, 2)
 
         self.label_43 = QLabel(self.frame_4)
         self.label_43.setObjectName(u"label_43")
@@ -584,26 +584,26 @@ class Ui_MainWindow(object):
 
         self.gridLayout_6.addWidget(self.label_44, 7, 0, 1, 1)
 
-        self.label_47 = QLabel(self.frame_4)
-        self.label_47.setObjectName(u"label_47")
-        self.label_47.setFont(font3)
-        self.label_47.setStyleSheet(u"color: rgb(255, 255, 255);")
+        self.system_date = QLabel(self.frame_4)
+        self.system_date.setObjectName(u"system_date")
+        self.system_date.setFont(font3)
+        self.system_date.setStyleSheet(u"color: rgb(255, 255, 255);")
 
-        self.gridLayout_6.addWidget(self.label_47, 7, 1, 1, 1)
+        self.gridLayout_6.addWidget(self.system_date, 7, 1, 1, 1)
 
-        self.label_51 = QLabel(self.frame_4)
-        self.label_51.setObjectName(u"label_51")
-        self.label_51.setFont(font3)
-        self.label_51.setStyleSheet(u"color: rgb(255, 255, 255);")
+        self.system_processor = QLabel(self.frame_4)
+        self.system_processor.setObjectName(u"system_processor")
+        self.system_processor.setFont(font3)
+        self.system_processor.setStyleSheet(u"color: rgb(255, 255, 255);")
 
-        self.gridLayout_6.addWidget(self.label_51, 2, 3, 1, 1)
+        self.gridLayout_6.addWidget(self.system_processor, 2, 3, 1, 1)
 
-        self.label_53 = QLabel(self.frame_4)
-        self.label_53.setObjectName(u"label_53")
-        self.label_53.setFont(font3)
-        self.label_53.setStyleSheet(u"color: rgb(255, 255, 255);")
+        self.system_time = QLabel(self.frame_4)
+        self.system_time.setObjectName(u"system_time")
+        self.system_time.setFont(font3)
+        self.system_time.setStyleSheet(u"color: rgb(255, 255, 255);")
 
-        self.gridLayout_6.addWidget(self.label_53, 7, 3, 1, 1)
+        self.gridLayout_6.addWidget(self.system_time, 7, 3, 1, 1)
 
         self.label_42 = QLabel(self.frame_4)
         self.label_42.setObjectName(u"label_42")
@@ -624,12 +624,12 @@ class Ui_MainWindow(object):
 
         self.gridLayout_6.addWidget(self.label_40, 0, 0, 1, 2)
 
-        self.label_45 = QLabel(self.frame_4)
-        self.label_45.setObjectName(u"label_45")
-        self.label_45.setFont(font3)
-        self.label_45.setStyleSheet(u"color: rgb(255, 255, 255);")
+        self.system_platform = QLabel(self.frame_4)
+        self.system_platform.setObjectName(u"system_platform")
+        self.system_platform.setFont(font3)
+        self.system_platform.setStyleSheet(u"color: rgb(255, 255, 255);")
 
-        self.gridLayout_6.addWidget(self.label_45, 2, 1, 1, 1)
+        self.gridLayout_6.addWidget(self.system_platform, 2, 1, 1, 1)
 
         self.label_50 = QLabel(self.frame_4)
         self.label_50.setObjectName(u"label_50")
@@ -645,12 +645,12 @@ class Ui_MainWindow(object):
 
         self.gridLayout_6.addWidget(self.label_49, 4, 2, 1, 1)
 
-        self.label_52 = QLabel(self.frame_4)
-        self.label_52.setObjectName(u"label_52")
-        self.label_52.setFont(font3)
-        self.label_52.setStyleSheet(u"color: rgb(255, 255, 255);")
+        self.system_machine = QLabel(self.frame_4)
+        self.system_machine.setObjectName(u"system_machine")
+        self.system_machine.setFont(font3)
+        self.system_machine.setStyleSheet(u"color: rgb(255, 255, 255);")
 
-        self.gridLayout_6.addWidget(self.label_52, 4, 3, 1, 1)
+        self.gridLayout_6.addWidget(self.system_machine, 4, 3, 1, 1)
 
 
         self.verticalLayout_6.addWidget(self.frame_4, 0, Qt.AlignTop)
@@ -679,11 +679,11 @@ class Ui_MainWindow(object):
         self.frame_8.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_12 = QHBoxLayout(self.frame_8)
         self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
-        self.lineEdit = QLineEdit(self.frame_8)
-        self.lineEdit.setObjectName(u"lineEdit")
-        self.lineEdit.setStyleSheet(u"color: rgb(255, 255, 255);")
+        self.activity_search = QLineEdit(self.frame_8)
+        self.activity_search.setObjectName(u"activity_search")
+        self.activity_search.setStyleSheet(u"color: rgb(255, 255, 255);")
 
-        self.horizontalLayout_12.addWidget(self.lineEdit)
+        self.horizontalLayout_12.addWidget(self.activity_search)
 
         self.pushButton_3 = QPushButton(self.frame_8)
         self.pushButton_3.setObjectName(u"pushButton_3")
@@ -878,7 +878,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 192, 460))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 437, 471))
         self.verticalLayout_12 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_12.setSpacing(0)
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
@@ -1222,7 +1222,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1275,22 +1275,22 @@ class Ui_MainWindow(object):
         self.label_34.setText(QCoreApplication.translate("MainWindow", u"Time Left", None))
         self.battery_plugged.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
         self.battery_status.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
-        self.label_46.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
+        self.system_version.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
         self.label_48.setText(QCoreApplication.translate("MainWindow", u"Processor", None))
-        self.label_41.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
+        self.system_system.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
         self.label_43.setText(QCoreApplication.translate("MainWindow", u"Version", None))
         self.label_44.setText(QCoreApplication.translate("MainWindow", u"System Date", None))
-        self.label_47.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
-        self.label_51.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
-        self.label_53.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
+        self.system_date.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
+        self.system_processor.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
+        self.system_time.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
         self.label_42.setText(QCoreApplication.translate("MainWindow", u"Platform", None))
         self.label_40.setText(QCoreApplication.translate("MainWindow", u"System Information", None))
-        self.label_45.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
+        self.system_platform.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
         self.label_50.setText(QCoreApplication.translate("MainWindow", u"System Time", None))
         self.label_49.setText(QCoreApplication.translate("MainWindow", u"Machine", None))
-        self.label_52.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
+        self.system_machine.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
         self.label_54.setText(QCoreApplication.translate("MainWindow", u"Activities", None))
-        self.lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Search Processes", None))
+        self.activity_search.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Search Processes", None))
         self.pushButton_3.setText("")
         ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"PROCESS ID", None));
