@@ -18,6 +18,7 @@ import psutil
 # Import PYSIDE2EXTN
 import PySide2extn
 
+from time import sleep
 
 # Import GUI File
 from ui_tutorial_system_info import *
@@ -149,6 +150,9 @@ class MainWindow(QMainWindow):
             # Add click event listener
             w.clicked.connect(self.applyButtonStyle)
 
+        # Start THREAD
+        # self.threadpool = QThreadPool()
+
         self.show()
 
         self.battery()
@@ -156,10 +160,149 @@ class MainWindow(QMainWindow):
         self.system_info()
         self.processes()
         self.storage()
+        self.sensors()
+        self.networks()
+
+    # ######################################################
+    # NETWORKS FUNCTIONS
+    # ######################################################
+    def networks(self):
+        # NET STATS
+        for x in psutil.net_if_stats():
+            z = psutil.net_if_stats()
+            # Create new Row
+            rowPosition = self.ui.net_stats_table.rowCount()
+            self.ui.net_stats_table.insertRow(rowPosition)
+
+            self.create_table_widget(rowPosition, 0, x, "net_stats_table")
+            self.create_table_widget(
+                rowPosition, 1, str(z[x].isup), "net_stats_table")
+            self.create_table_widget(rowPosition, 2, str(
+                z[x].duplex), "net_stats_table")
+            self.create_table_widget(
+                rowPosition, 3, str(z[x].speed), "net_stats_table")
+            self.create_table_widget(
+                rowPosition, 4, str(z[x].mtu), "net_stats_table")
+
+        # NET IO COUNTERS
+        for x in psutil.net_io_counters(pernic=True):
+            z = psutil.net_io_counters(pernic=True)
+            # Create new Row
+            rowPosition = self.ui.net_io_table.rowCount()
+            self.ui.net_io_table.insertRow(rowPosition)
+
+            self.create_table_widget(rowPosition, 0, x, "net_io_table")
+            self.create_table_widget(rowPosition, 1, str(
+                z[x].bytes_sent), "net_io_table")
+            self.create_table_widget(rowPosition, 2, str(
+                z[x].bytes_recv), "net_io_table")
+            self.create_table_widget(rowPosition, 3, str(
+                z[x].packets_sent), "net_io_table")
+            self.create_table_widget(rowPosition, 4, str(
+                z[x].packets_recv), "net_io_table")
+            self.create_table_widget(
+                rowPosition, 5, str(z[x].errin), "net_io_table")
+            self.create_table_widget(
+                rowPosition, 6, str(z[x].errout), "net_io_table")
+            self.create_table_widget(
+                rowPosition, 7, str(z[x].dropin), "net_io_table")
+            self.create_table_widget(
+                rowPosition, 8, str(z[x].dropout), "net_io_table")
+
+        # NET ADDRESS
+        for x in psutil.net_if_addrs():
+            z = psutil.net_if_addrs()
+            # print(z)
+            for y in z[x]:
+                # Create new Row
+                rowPosition = self.ui.net_address_table.rowCount()
+                self.ui.net_address_table.insertRow(rowPosition)
+
+                self.create_table_widget(
+                    rowPosition, 0, str(x), "net_address_table")
+                self.create_table_widget(
+                    rowPosition, 1, str(y.family), "net_address_table")
+                self.create_table_widget(rowPosition, 2, str(
+                    y.address), "net_address_table")
+                self.create_table_widget(rowPosition, 3, str(
+                    y.netmask), "net_address_table")
+                self.create_table_widget(rowPosition, 4, str(
+                    y.broadcast), "net_address_table")
+                self.create_table_widget(
+                    rowPosition, 5, str(y.ptp), "net_address_table")
+
+        # NET CONNECTIONS
+        for x in psutil.net_connections():
+            z = psutil.net_connections()
+            # Create new Row
+            rowPosition = self.ui.net_connections_table.rowCount()
+            self.ui.net_connections_table.insertRow(rowPosition)
+
+            self.create_table_widget(
+                rowPosition, 0, str(x.fd), "net_connections_table")
+            self.create_table_widget(rowPosition, 1, str(
+                x.family), "net_connections_table")
+            self.create_table_widget(rowPosition, 2, str(
+                x.type), "net_connections_table")
+            self.create_table_widget(rowPosition, 3, str(
+                x.laddr), "net_connections_table")
+            self.create_table_widget(rowPosition, 4, str(
+                x.raddr), "net_connections_table")
+            self.create_table_widget(rowPosition, 5, str(
+                x.status), "net_connections_table")
+            self.create_table_widget(rowPosition, 6, str(
+                x.pid), "net_connections_table")
+
+    # ######################################################
+    # SENSORS INFORMATION
+    # ######################################################
+
+    def sensors(self):
+        # PSUTIL Sensors currently works on linux platform
+        if sys.platform == "linux" or sys.platform == "linux1" or sys.platform == "linux2":
+
+            for x in psutil.sensors_temperature():
+                for y in psutil.sensors_temperature()[x]:
+                    # Create new row
+                    rowPosition = self.ui.sensorTable.rowCount()
+                    self.ui.sensorTable.insertRow(rowPosition)
+
+                    self.create_table_widget(rowPosition, 0, x, "sensorTable")
+                    self.create_table_widget(
+                        rowPosition, 1, y.label, "sensorTable")
+                    self.create_table_widget(
+                        rowPosition, 2, str(y.current), "sensorTable")
+                    self.create_table_widget(
+                        rowPosition, 3, str(y.high), "sensorTable")
+                    self.create_table_widget(
+                        rowPosition, 4, str(y.critical), "sensorTable")
+
+                    temp_per = (y.current / y.high) * 100
+
+                    progressBar = QProgressBar(self.ui.sensorTable)
+                    progressBar.setObjectName(u"progressBar")
+                    progressBar.setValue(temp_per)
+                    self.ui.sensorTable.setCellWidget(
+                        rowPosition, 5, progressBar)
+
+        else:
+            global platforms
+            # Create new Row
+            rowPosition = self.ui.sensorTable.rowCount()
+            self.ui.sensorTable.insertRow(rowPosition)
+
+            self.create_table_widget(
+                rowPosition, 0, "Function not supported on " + platforms[sys.platform], "sensorTable")
+            self.create_table_widget(rowPosition, 1, "N/A", "sensorTable")
+            self.create_table_widget(rowPosition, 2, "N/A", "sensorTable")
+            self.create_table_widget(rowPosition, 3, "N/A", "sensorTable")
+            self.create_table_widget(rowPosition, 4, "N/A", "sensorTable")
+            self.create_table_widget(rowPosition, 5, "N/A", "sensorTable")
 
     # ######################################################
     # STORAGE PARTITIONS
     # ######################################################
+
     def storage(self):
         global platforms
         storage_device = psutil.disk_partitions(all=False)
@@ -576,4 +719,5 @@ class MainWindow(QMainWindow):
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = MainWindow()
+
     sys.exit(app.exec_())
