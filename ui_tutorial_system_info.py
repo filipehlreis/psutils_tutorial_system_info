@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'tutorial_system_infosEsksw.ui'
+## Form generated from reading UI file 'tutorial_system_infoIEvgXr.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -333,33 +333,33 @@ class Ui_MainWindow(object):
 
         self.gridLayout_3.addWidget(self.label_12, 0, 0, 1, 1)
 
-        self.label_17 = QLabel(self.cpu_info_frame)
-        self.label_17.setObjectName(u"label_17")
-        self.label_17.setFont(font3)
-        self.label_17.setStyleSheet(u"color: rgb(255, 255, 255);")
+        self.cpu_count = QLabel(self.cpu_info_frame)
+        self.cpu_count.setObjectName(u"cpu_count")
+        self.cpu_count.setFont(font3)
+        self.cpu_count.setStyleSheet(u"color: rgb(255, 255, 255);")
 
-        self.gridLayout_3.addWidget(self.label_17, 0, 1, 1, 1)
+        self.gridLayout_3.addWidget(self.cpu_count, 0, 1, 1, 1)
 
-        self.label_18 = QLabel(self.cpu_info_frame)
-        self.label_18.setObjectName(u"label_18")
-        self.label_18.setFont(font3)
-        self.label_18.setStyleSheet(u"color: rgb(255, 255, 255);")
+        self.cpu_per = QLabel(self.cpu_info_frame)
+        self.cpu_per.setObjectName(u"cpu_per")
+        self.cpu_per.setFont(font3)
+        self.cpu_per.setStyleSheet(u"color: rgb(255, 255, 255);")
 
-        self.gridLayout_3.addWidget(self.label_18, 1, 1, 1, 1)
+        self.gridLayout_3.addWidget(self.cpu_per, 1, 1, 1, 1)
 
-        self.label_20 = QLabel(self.cpu_info_frame)
-        self.label_20.setObjectName(u"label_20")
-        self.label_20.setFont(font3)
-        self.label_20.setStyleSheet(u"color: rgb(255, 255, 255);")
+        self.cpu_main_core = QLabel(self.cpu_info_frame)
+        self.cpu_main_core.setObjectName(u"cpu_main_core")
+        self.cpu_main_core.setFont(font3)
+        self.cpu_main_core.setStyleSheet(u"color: rgb(255, 255, 255);")
 
-        self.gridLayout_3.addWidget(self.label_20, 2, 1, 1, 1)
+        self.gridLayout_3.addWidget(self.cpu_main_core, 2, 1, 1, 1)
 
-        self.widget_13 = roundProgressBar(self.cpu_info_frame)
-        self.widget_13.setObjectName(u"widget_13")
-        self.widget_13.setMinimumSize(QSize(150, 150))
-        self.widget_13.setMaximumSize(QSize(150, 150))
+        self.cpu_percentage = roundProgressBar(self.cpu_info_frame)
+        self.cpu_percentage.setObjectName(u"cpu_percentage")
+        self.cpu_percentage.setMinimumSize(QSize(150, 150))
+        self.cpu_percentage.setMaximumSize(QSize(150, 150))
 
-        self.gridLayout_3.addWidget(self.widget_13, 0, 3, 3, 1)
+        self.gridLayout_3.addWidget(self.cpu_percentage, 0, 3, 3, 1)
 
 
         self.verticalLayout_4.addWidget(self.cpu_info_frame)
@@ -370,12 +370,12 @@ class Ui_MainWindow(object):
         self.ram_info_frame.setFrameShadow(QFrame.Raised)
         self.gridLayout_4 = QGridLayout(self.ram_info_frame)
         self.gridLayout_4.setObjectName(u"gridLayout_4")
-        self.label_29 = QLabel(self.ram_info_frame)
-        self.label_29.setObjectName(u"label_29")
-        self.label_29.setFont(font3)
-        self.label_29.setStyleSheet(u"color: rgb(255, 255, 255);")
+        self.free_used = QLabel(self.ram_info_frame)
+        self.free_used.setObjectName(u"free_used")
+        self.free_used.setFont(font3)
+        self.free_used.setStyleSheet(u"color: rgb(255, 255, 255);")
 
-        self.gridLayout_4.addWidget(self.label_29, 3, 1, 1, 1)
+        self.gridLayout_4.addWidget(self.free_used, 3, 1, 1, 1)
 
         self.label_21 = QLabel(self.ram_info_frame)
         self.label_21.setObjectName(u"label_21")
@@ -384,12 +384,12 @@ class Ui_MainWindow(object):
 
         self.gridLayout_4.addWidget(self.label_21, 0, 0, 1, 1)
 
-        self.label_28 = QLabel(self.ram_info_frame)
-        self.label_28.setObjectName(u"label_28")
-        self.label_28.setFont(font3)
-        self.label_28.setStyleSheet(u"color: rgb(255, 255, 255);")
+        self.used_ram = QLabel(self.ram_info_frame)
+        self.used_ram.setObjectName(u"used_ram")
+        self.used_ram.setFont(font3)
+        self.used_ram.setStyleSheet(u"color: rgb(255, 255, 255);")
 
-        self.gridLayout_4.addWidget(self.label_28, 2, 1, 1, 1)
+        self.gridLayout_4.addWidget(self.used_ram, 2, 1, 1, 1)
 
         self.label_25 = QLabel(self.ram_info_frame)
         self.label_25.setObjectName(u"label_25")
@@ -412,12 +412,12 @@ class Ui_MainWindow(object):
 
         self.gridLayout_4.addWidget(self.label_27, 4, 0, 1, 1)
 
-        self.label_23 = QLabel(self.ram_info_frame)
-        self.label_23.setObjectName(u"label_23")
-        self.label_23.setFont(font3)
-        self.label_23.setStyleSheet(u"color: rgb(255, 255, 255);")
+        self.total_ram = QLabel(self.ram_info_frame)
+        self.total_ram.setObjectName(u"total_ram")
+        self.total_ram.setFont(font3)
+        self.total_ram.setStyleSheet(u"color: rgb(255, 255, 255);")
 
-        self.gridLayout_4.addWidget(self.label_23, 0, 1, 1, 1)
+        self.gridLayout_4.addWidget(self.total_ram, 0, 1, 1, 1)
 
         self.label_22 = QLabel(self.ram_info_frame)
         self.label_22.setObjectName(u"label_22")
@@ -426,26 +426,26 @@ class Ui_MainWindow(object):
 
         self.gridLayout_4.addWidget(self.label_22, 1, 0, 1, 1)
 
-        self.label_30 = QLabel(self.ram_info_frame)
-        self.label_30.setObjectName(u"label_30")
-        self.label_30.setFont(font3)
-        self.label_30.setStyleSheet(u"color: rgb(255, 255, 255);")
-
-        self.gridLayout_4.addWidget(self.label_30, 4, 1, 1, 1)
-
-        self.label_24 = QLabel(self.ram_info_frame)
-        self.label_24.setObjectName(u"label_24")
-        self.label_24.setFont(font3)
-        self.label_24.setStyleSheet(u"color: rgb(255, 255, 255);")
-
-        self.gridLayout_4.addWidget(self.label_24, 1, 1, 1, 1)
-
-        self.ram_usage = spiralProgressBar(self.ram_info_frame)
+        self.ram_usage = QLabel(self.ram_info_frame)
         self.ram_usage.setObjectName(u"ram_usage")
-        self.ram_usage.setMinimumSize(QSize(150, 150))
-        self.ram_usage.setMaximumSize(QSize(150, 150))
+        self.ram_usage.setFont(font3)
+        self.ram_usage.setStyleSheet(u"color: rgb(255, 255, 255);")
 
-        self.gridLayout_4.addWidget(self.ram_usage, 0, 2, 5, 1)
+        self.gridLayout_4.addWidget(self.ram_usage, 4, 1, 1, 1)
+
+        self.available_ram = QLabel(self.ram_info_frame)
+        self.available_ram.setObjectName(u"available_ram")
+        self.available_ram.setFont(font3)
+        self.available_ram.setStyleSheet(u"color: rgb(255, 255, 255);")
+
+        self.gridLayout_4.addWidget(self.available_ram, 1, 1, 1, 1)
+
+        self.ram_percentage = spiralProgressBar(self.ram_info_frame)
+        self.ram_percentage.setObjectName(u"ram_percentage")
+        self.ram_percentage.setMinimumSize(QSize(150, 150))
+        self.ram_percentage.setMaximumSize(QSize(150, 150))
+
+        self.gridLayout_4.addWidget(self.ram_percentage, 0, 2, 5, 1)
 
 
         self.verticalLayout_4.addWidget(self.ram_info_frame)
@@ -1222,7 +1222,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1253,19 +1253,19 @@ class Ui_MainWindow(object):
         self.label_16.setText(QCoreApplication.translate("MainWindow", u"CPU Per", None))
         self.label_19.setText(QCoreApplication.translate("MainWindow", u"CPU Main Core", None))
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"CPU Count", None))
-        self.label_17.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
-        self.label_18.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
-        self.label_20.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
-        self.label_29.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
+        self.cpu_count.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
+        self.cpu_per.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
+        self.cpu_main_core.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
+        self.free_used.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
         self.label_21.setText(QCoreApplication.translate("MainWindow", u"Total RAM", None))
-        self.label_28.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
+        self.used_ram.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
         self.label_25.setText(QCoreApplication.translate("MainWindow", u"Used RAM", None))
         self.label_26.setText(QCoreApplication.translate("MainWindow", u"Free RAM", None))
         self.label_27.setText(QCoreApplication.translate("MainWindow", u"RAM Usage", None))
-        self.label_23.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
+        self.total_ram.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
         self.label_22.setText(QCoreApplication.translate("MainWindow", u"Available RAM", None))
-        self.label_30.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
-        self.label_24.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
+        self.ram_usage.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
+        self.available_ram.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
         self.label_31.setText(QCoreApplication.translate("MainWindow", u"Battery Information", None))
         self.label_35.setText(QCoreApplication.translate("MainWindow", u"Plugged In", None))
         self.label_32.setText(QCoreApplication.translate("MainWindow", u"Status", None))

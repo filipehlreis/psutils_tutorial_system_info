@@ -569,7 +569,7 @@ background: #171C29;
           <item>
            <widget class="QStackedWidget" name="stackedWidget">
             <property name="currentIndex">
-             <number>1</number>
+             <number>0</number>
             </property>
             <widget class="QWidget" name="cpu_and_memory">
              <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -631,7 +631,7 @@ background: #171C29;
                   </widget>
                  </item>
                  <item row="0" column="1">
-                  <widget class="QLabel" name="label_17">
+                  <widget class="QLabel" name="cpu_count">
                    <property name="font">
                     <font>
                      <family>Noto Sans</family>
@@ -647,7 +647,7 @@ background: #171C29;
                   </widget>
                  </item>
                  <item row="1" column="1">
-                  <widget class="QLabel" name="label_18">
+                  <widget class="QLabel" name="cpu_per">
                    <property name="font">
                     <font>
                      <family>Noto Sans</family>
@@ -663,7 +663,7 @@ background: #171C29;
                   </widget>
                  </item>
                  <item row="2" column="1">
-                  <widget class="QLabel" name="label_20">
+                  <widget class="QLabel" name="cpu_main_core">
                    <property name="font">
                     <font>
                      <family>Noto Sans</family>
@@ -679,7 +679,7 @@ background: #171C29;
                   </widget>
                  </item>
                  <item row="0" column="3" rowspan="3">
-                  <widget class="roundProgressBar" name="widget_13" native="true">
+                  <widget class="roundProgressBar" name="cpu_percentage" native="true">
                    <property name="minimumSize">
                     <size>
                      <width>150</width>
@@ -707,7 +707,7 @@ background: #171C29;
                 </property>
                 <layout class="QGridLayout" name="gridLayout_4">
                  <item row="3" column="1">
-                  <widget class="QLabel" name="label_29">
+                  <widget class="QLabel" name="free_used">
                    <property name="font">
                     <font>
                      <family>Noto Sans</family>
@@ -739,7 +739,7 @@ background: #171C29;
                   </widget>
                  </item>
                  <item row="2" column="1">
-                  <widget class="QLabel" name="label_28">
+                  <widget class="QLabel" name="used_ram">
                    <property name="font">
                     <font>
                      <family>Noto Sans</family>
@@ -803,7 +803,7 @@ background: #171C29;
                   </widget>
                  </item>
                  <item row="0" column="1">
-                  <widget class="QLabel" name="label_23">
+                  <widget class="QLabel" name="total_ram">
                    <property name="font">
                     <font>
                      <family>Noto Sans</family>
@@ -835,7 +835,7 @@ background: #171C29;
                   </widget>
                  </item>
                  <item row="4" column="1">
-                  <widget class="QLabel" name="label_30">
+                  <widget class="QLabel" name="ram_usage">
                    <property name="font">
                     <font>
                      <family>Noto Sans</family>
@@ -851,7 +851,7 @@ background: #171C29;
                   </widget>
                  </item>
                  <item row="1" column="1">
-                  <widget class="QLabel" name="label_24">
+                  <widget class="QLabel" name="available_ram">
                    <property name="font">
                     <font>
                      <family>Noto Sans</family>
@@ -867,7 +867,7 @@ background: #171C29;
                   </widget>
                  </item>
                  <item row="0" column="2" rowspan="5">
-                  <widget class="spiralProgressBar" name="ram_usage" native="true">
+                  <widget class="spiralProgressBar" name="ram_percentage" native="true">
                    <property name="minimumSize">
                     <size>
                      <width>150</width>

@@ -7,6 +7,7 @@ import sys
 import os
 from turtle import width
 from PySide2 import *
+from multiprocessing import cpu_count
 # Import QT Material
 from qt_material import *
 # import PSUtil
@@ -137,6 +138,110 @@ class MainWindow(QMainWindow):
         self.show()
 
         self.battery()
+        self.cpu_ram()
+
+    # # ##################################################
+    # System CPU and RAM Information
+
+    def cpu_ram(self):
+        totalRam = 1.0
+        totalRam = psutil.virtual_memory()[0] * totalRam
+        totalRam = totalRam / (1024 * 1024 * 1024)
+        self.ui.total_ram.setText(str("{:.4f}".format(totalRam) + " GB"))
+
+        availRam = 1.0
+        availRam = psutil.virtual_memory()[1] * availRam
+        availRam = availRam / (1024 * 1024 * 1024)
+        self.ui.available_ram.setText(str("{:.4f}".format(availRam) + " GB"))
+
+        ramUsed = 1.0
+        ramUsed = psutil.virtual_memory()[3] * ramUsed
+        ramUsed = ramUsed / (1024 * 1024 * 1024)
+        self.ui.used_ram.setText(str("{:.4f}".format(ramUsed) + " GB"))
+
+        ramFree = 1.0
+        ramFree = psutil.virtual_memory()[4] * ramFree
+        ramFree = ramFree / (1024 * 1024 * 1024)
+        self.ui.free_used.setText(str("{:.4f}".format(ramFree) + " GB"))
+
+        ramUsages = str(psutil.virtual_memory()[2]) + "%"
+        self.ui.ram_usage.setText(str("{:.4f}".format(totalRam) + " GB"))
+
+        core = cpu_count()
+        self.ui.cpu_count.setText(str(core))
+
+        cpuPer = psutil.cpu_percent()
+        self.ui.cpu_per.setText(str(cpuPer) + " %")
+
+        cpuMainCore = psutil.cpu_count(logical=False)
+        self.ui.cpu_main_core.setText(str(cpuMainCore))
+
+        # CPU Percentage Indicator
+        # SET Progress Bar Value
+        self.ui.cpu_percentage.rpb_setMaximum(100)
+        # SET Progress Values
+        self.ui.cpu_percentage.rpb_setValue(cpuPer)
+        # SET Progress Bar Style
+        self.ui.cpu_percentage.rpb_setBarStyle("Hybrid2")
+        # SET Progress Bar Line Color
+        self.ui.cpu_percentage.rpb_setLineColor((255, 30, 99))
+        # SET Progress Bar Line Color
+        # self.ui.cpu_percentage.rpb_setCircleColor((45,74,83))
+        # SET Progress bar line color
+        self.ui.cpu_percentage.rpb_setPieColor((45, 74, 83))
+        # CHanging the path color
+        # self.ui.cpu_percentage.rpb_setPathColor((45, 74, 83))
+        # SET Progress va text color
+        self.ui.cpu_percentage.rpb_setTextColor((255, 255, 255))
+        # SET Progress bar starting position
+        # North, East, West, South
+        self.ui.cpu_percentage.rpb_setInitialPos("West")
+        # sET  Progress bar text type : Value or Percentage
+        self.ui.cpu_percentage.rpb_setTextFormat('Percentage')
+        # SET progress bar font
+        self.ui.cpu_percentage.rpb_setTextFont("Arial")
+        # set text hidden
+        # self.ui.cpu_percentage.rpb_enableText(False)
+        # set progress bar line width
+        self.ui.cpu_percentage.rpb_setLineWidth(15)
+        # path width
+        self.ui.cpu_percentage.rpb_setPathWidth(15)
+        # set progress bar line cap
+        # RoundCap, SquareCap
+        self.ui.cpu_percentage.rpb_setLineCap("RoundCap")
+        # line style
+        # DotLine, DashLine
+        # self.ui.cpu_percentage.rpb_setLineStyle('SolidLine')
+
+        # #################################################
+        # RAM USAGE INDICATOR USING SPIRAL PROGRESS BAR
+
+        # SETTING THE MINIMUM VALUE
+        self.ui.ram_percentage.spb_setMinimum((0, 0, 0))
+        # SETTING THE MAXIMUM VALUE
+        self.ui.ram_percentage.spb_setMaximum((totalRam, totalRam, totalRam))
+        # set progress value
+        self.ui.ram_percentage.spb_setValue((availRam, ramUsed, ramFree))
+        # set progress color (R,G,B)
+        self.ui.ram_percentage.spb_lineColor(
+            ((6, 233, 38), (6, 201, 233), (233, 6, 201)))
+        # setting the initial position of the progress bar: from outer -> inwards
+        self.ui.ram_percentage.spb_setInitialPos(("West", "West", "West"))
+        # setting the direction of progress of the progress bar: from outer-inwards
+        # self.ui.percentage.spb_setDirection(
+        #     ('Clockwise', 'Clockwise', 'Clockwise'))
+        # set line width: 5px
+        self.ui.ram_percentage.spb_lineWidth(15)
+        # Set gap width
+        self.ui.ram_percentage.spb_setGap(15)
+        # set line style
+        self.ui.ram_percentage.spb_lineStyle(
+            ("SolidLine", "SolidLine", "SolidLine"))
+        # Set line cap
+        self.ui.ram_percentage.spb_lineCap(
+            ("RoundCap", "RoundCap", "RoundCap"))
+        # hide the path
+        self.ui.ram_percentage.spb_setPathHidden(True)
 
     # A function to convert seconds to hours
 
