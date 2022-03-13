@@ -5,6 +5,7 @@
 # Imports
 from datetime import datetime
 import platform
+import shutil
 import sys
 import os
 from turtle import width
@@ -20,6 +21,17 @@ import PySide2extn
 
 # Import GUI File
 from ui_tutorial_system_info import *
+
+
+# Global
+platforms = {
+    "linux": "Linux",
+    "linux1": "Linux",
+    "linux2": "Linux",
+    "darwin": "OS X",
+    "win32": "Windows",
+    "win64": "Windows",
+}
 
 
 # Main Window Class
@@ -143,10 +155,67 @@ class MainWindow(QMainWindow):
         self.cpu_ram()
         self.system_info()
         self.processes()
+        self.storage()
+
+    # ######################################################
+    # STORAGE PARTITIONS
+    # ######################################################
+    def storage(self):
+        global platforms
+        storage_device = psutil.disk_partitions(all=False)
+        z = 0
+        for x in storage_device:
+            # print(x)
+            # Create new Row
+            rowPosition = self.ui.storageTable.rowCount()
+            self.ui.storageTable.insertRow(rowPosition)
+
+            self.create_table_widget(rowPosition, 0, x.device, "storageTable")
+            self.create_table_widget(
+                rowPosition, 1, x.mountpoint, "storageTable")
+            self.create_table_widget(rowPosition, 2, x.fstype, "storageTable")
+            self.create_table_widget(rowPosition, 3, x.opts, "storageTable")
+
+            # check platform
+            if sys.platform == 'linux' or sys.platform == 'linux1' or sys.platform == 'linux2':
+                self.create_table_widget(
+                    rowPosition, 4, str(x.maxfile), "storageTable")
+                self.create_table_widget(
+                    rowPosition, 5, str(x.maxpath), "storageTable")
+            else:
+                self.create_table_widget(
+                    rowPosition, 4, "Function not available on " + platforms[sys.platform], "storageTable")
+                self.create_table_widget(
+                    rowPosition, 5, "Function not available on " + platforms[sys.platform], "storageTable")
+
+            # print(psutil.disk_usage(x.device))
+            disk_usage = shutil.disk_usage(x.mountpoint)
+            # print(disk_usage.total)
+            disk_usage_total_formated = round(
+                (disk_usage.total / (1024 * 1024 * 1024)), 4)
+            disk_usage_free_formated = round(
+                (disk_usage.free / (1024 * 1024 * 1024)), 4)
+            disk_usage_used_formated = round(
+                (disk_usage.used / (1024 * 1024 * 1024)), 4)
+
+            self.create_table_widget(rowPosition, 6, str("{:.3f}".format(
+                disk_usage_total_formated)) + " GB", "storageTable")
+            self.create_table_widget(rowPosition, 7, str(
+                "{:.3f}".format(disk_usage_free_formated)) + " GB", "storageTable")
+            self.create_table_widget(rowPosition, 8, str(
+                "{:.3f}".format(disk_usage_used_formated)) + " GB", "storageTable")
+            # print(shutil.disk_usage(x.mountpoint))
+
+            full_disk = (disk_usage.used / disk_usage.total) * 100
+            progressBar = QProgressBar(self.ui.storageTable)
+            progressBar.setObjectName(u"progressBar")
+            progressBar.setValue(full_disk)
+            self.ui.storageTable.setCellWidget(rowPosition, 9, progressBar)
 
     # ######################################################
     # A FUNCTION THAT CREATES TABLE WIDGETS
     # ######################################################
+
     def create_table_widget(self, rowPosition, columnPosition, text, tableName):
         qtablewidgetitem = QTableWidgetItem()
 

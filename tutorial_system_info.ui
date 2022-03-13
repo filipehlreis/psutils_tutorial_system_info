@@ -569,7 +569,7 @@ background: #171C29;
           <item>
            <widget class="QStackedWidget" name="stackedWidget">
             <property name="currentIndex">
-             <number>3</number>
+             <number>4</number>
             </property>
             <widget class="QWidget" name="cpu_and_memory">
              <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -1606,7 +1606,7 @@ background: #171C29;
                </widget>
               </item>
               <item>
-               <widget class="QTableWidget" name="tableWidget_2">
+               <widget class="QTableWidget" name="storageTable">
                 <column>
                  <property name="text">
                   <string>DEVICE</string>
@@ -1635,6 +1635,11 @@ background: #171C29;
                   <font>
                    <family>Noto Sans</family>
                   </font>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>MAX</string>
                  </property>
                 </column>
                 <column>
@@ -1669,7 +1674,7 @@ background: #171C29;
                 </column>
                 <column>
                  <property name="text">
-                  <string>USED STORAGE</string>
+                  <string>FREE STORAGE</string>
                  </property>
                  <property name="font">
                   <font>
@@ -1679,7 +1684,7 @@ background: #171C29;
                 </column>
                 <column>
                  <property name="text">
-                  <string>FREE STORAGE</string>
+                  <string>USED STORAGE</string>
                  </property>
                  <property name="font">
                   <font>
